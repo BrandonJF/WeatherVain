@@ -6,12 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:weightSum="1"
     tools:showIn="@layout/activity_main" tools:context=".MainActivity">
 
   <RelativeLayout
       android:layout_width="match_parent"
       android:layout_height="0dp"
-      android:layout_weight="0.68"
+      android:layout_weight="0.62"
       android:background="#FF5722">
 
       <!--image will go here-->
@@ -23,16 +24,16 @@
   </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.33"
         android:paddingTop="@dimen/activity_horizontal_margin"
+        android:layout_height="0dp"
+        android:layout_weight="0.38"
         android:background="#212121">
 
         <!--this will hold text views-->
         <TextView
             android:id="@+id/error"
             android:layout_centerInParent="true"
-            android:visibility="visible"
+            android:visibility="gone"
             android:textSize="20sp"
             android:textColor="#FF5722"
             android:layout_margin="@dimen/activity_horizontal_margin"
@@ -40,5 +41,27 @@
             android:text="I'm sorry. \nIWasn't able to retrieve real time data."
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/degrees"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="90sp"
+            android:textColor="#FF5722"
+            android:text="-36°"
+            />
+
+        <TextView
+            android:id="@+id/weather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/degrees"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:textColor="#FF5722"
+            android:text="Sunny"
+            />
     </RelativeLayout>
 </LinearLayout>

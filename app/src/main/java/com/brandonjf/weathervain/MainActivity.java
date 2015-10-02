@@ -101,7 +101,6 @@ public class MainActivity extends AppCompatActivity implements VolleyResponseInt
         }, 0, 0, ImageView.ScaleType.CENTER_CROP, Bitmap.Config.ARGB_8888, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                int iasd = 1;
             }
         });
         applicationController.addToRequestQueue(request);

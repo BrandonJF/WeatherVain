@@ -12,7 +12,8 @@ import org.json.JSONObject;
  * Created by brandon on 10/1/15.
  */
 public class WeatherLib {
-    final static String API_ENDPOINT = "http://marsweather.ingenology.com/v1/latest/";
+    private final static String API_KEY = "23ed6c48a8904099ee2e6df28cbb5f42";
+    final static String API_ENDPOINT = "http://api.openweathermap.org/data/2.5/weather?units=imperial&zip=11211,us&APPID=" + API_KEY;
     public static VolleyResponseInterface volleyResponseInterface;
     private static WeatherLib mInstance;
     private ApplicationController applicationController = ApplicationController.getInstance();
@@ -20,21 +21,20 @@ public class WeatherLib {
         @Override
         public void onResponse(JSONObject response) {
             try {
-                String maxTemp;
-                response = response.getJSONObject("report");
-                maxTemp = response.getString("max_temp");
-                Log.d("WeatherLib", maxTemp);
-                volleyResponseInterface.onWeatherSuccess(maxTemp);
-                int bird = 1;
+                String temp;
+                response = response.getJSONObject("main");
+                temp = response.getString("temp");
+                Log.d("WeatherLib", temp);
+                volleyResponseInterface.onWeatherSuccess(temp);
             } catch (Exception e) {
-
+                Log.d("WeatherVain", e.toString());
             }
         }
     };
     private Response.ErrorListener errorListener = new Response.ErrorListener() {
         @Override
         public void onErrorResponse(VolleyError error) {
-
+            Log.d("WeatherVain", error.toString());
         }
     };
 

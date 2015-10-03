@@ -70,10 +70,8 @@ public class MainActivity extends AppCompatActivity implements VolleyResponseInt
     }
 
     private void loadData() {
-        PhotoLib photoLib = PhotoLib.getInstance(this);
-        WeatherLib weatherLib = WeatherLib.getInstance(this);
-        photoLib.getRandomImage();
-        weatherLib.getWeatherData();
+        PhotoLib.getInstance(this).getRandomImage();
+        WeatherLib.getInstance(this).getWeatherData();;
     }
 
     private void txtError(Exception e) {

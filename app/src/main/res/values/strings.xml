@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">WeatherVain</string>
     <string name="action_settings">Settings</string>
+
+    <string name="title_activity_screen_slide">ScreenSlideActivity</string>
+    <string name="like_entice">Add to circle</string>
 </resources>
